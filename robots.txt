@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paracumpleanos.com/sitemap.xml
+
+# No bloquear ninguna página importante
+Disallow: /404.html
