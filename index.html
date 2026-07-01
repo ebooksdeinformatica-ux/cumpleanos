@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Para Cumpleaños: Ideas, frases, organización y tendencias para celebrar de forma única.">
+    <title>Para Cumpleaños | Ideas y Recursos para Celebrar</title>
+    <style>
+        /* Estilo base: fondo blanco, letras negras, toques de amarillo y azul */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        /* Encabezado */
+        header {
+            background-color: white;
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .logo span {
+            color: #FFD700;
+        }
+        
+        /* Menú hamburguesa */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            color: #4169E1;
+        }
+        
+        /* Menú responsivo */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+        
+        /* Contenido principal */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #000;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        /* Sección de categorías */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .category-card {
+            background-color: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .category-card h2 {
+            color: #000;
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        
+        .category-card h2 span {
+            color: #4169E1;
+        }
+        
+        .category-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        /* Botón */
+        .btn {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #000;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #FFC107;
+        }
+        
+        /* Pie de página */
+        footer {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        /* Banner de cookies */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        #cookie-banner button {
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Para <span>Cumpleaños</span></div>
+        <button class="hamburger">☰</button>
+        <ul class="nav-menu">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/categoria/frases-y-mensajes">Frases y Mensajes</a></li>
+            <li><a href="/categoria/ideas-y-tematicas">Ideas y Temáticas</a></li>
+            <li><a href="/categoria/organizacion">Organización</a></li>
+            <li><a href="/categoria/tendencias-2026">Tendencias 2026</a></li>
+            <li><a href="/categoria/recursos-gratis">Recursos Gratuitos</a></li>
+        </ul>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Ideas para Celebrar de Forma Única</h1>
+            <p>Frases, temáticas, organización y recursos para que cada cumpleaños sea inolvidable.</p>
+        </section>
+        
+        <section class="categories">
+            <div class="category-card">
+                <h2><span>Frases</span> y Mensajes</h2>
+                <p>Encontrá las palabras perfectas para cada ocasión: cartas, dedicatorias y mensajes que emocionan.</p>
+                <a href="/categoria/frases-y-mensajes" class="btn">Ver más</a>
+            </div>
+            
+            <div class="category-card">
+                <h2><span>Ideas</span> y Temáticas</h2>
+                <p>Inspírate con temáticas originales, desde clásicas hasta las más innovadoras del 2026.</p>
+                <a href="/categoria/ideas-y-tematicas" class="btn">Ver más</a>
+            </div>
+            
+            <div class="category-card">
+                <h2><span>Organización</span></h2>
+                <p>Guías prácticas para planificar tu cumpleaños sin estrés: pasos, checklists y consejos.</p>
+                <a href="/categoria/organizacion" class="btn">Ver más</a>
+            </div>
+            
+            <div class="category-card">
+                <h2><span>Tendencias</span> 2026</h2>
+                <p>Mantenete al día con las últimas modas en cumpleaños: outfits, decoración, música y más.</p>
+                <a href="/categoria/tendencias-2026" class="btn">Ver más</a>
+            </div>
+            
+            <div class="category-card">
+                <h2><span>Recursos</span> Gratuitos</h2>
+                <p>Descargá plantillas, checklists y herramientas para facilitar la organización de tu evento.</p>
+                <a href="/categoria/recursos-gratis" class="btn">Ver más</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2026 Para Cumpleaños. Todos los derechos reservados.</p>
+        <p><a href="/politica-de-privacidad" style="color: #000; text-decoration: none;">Política de Privacidad</a> | <a href="/cookies" style="color: #000; text-decoration: none;">Cookies</a></p>
+    </footer>
+    
+    <div id="cookie-banner">
+        <p>Usamos cookies para mejorar tu experiencia. <a href="/cookies" style="color: #4169E1;">Más información</a>.</p>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'">Aceptar</button>
+    </div>
+    
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
