@@ -6,242 +6,39 @@
     <meta name="description" content="Blog Para Cumpleaños: Ideas, frases, organización y tendencias para celebrar de forma única.">
     <title>Para Cumpleaños | Ideas y Recursos para Celebrar</title>
     <style>
-        /* Estilo base: fondo blanco, letras negras, toques de amarillo y azul */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: white;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        
-        /* Encabezado */
-        header {
-            background-color: white;
-            padding: 1rem;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #000;
-        }
-        
-        .logo span {
-            color: #FFD700;
-        }
-        
-        /* Menú hamburguesa */
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: #000;
-            font-weight: 500;
-        }
-        
-        .nav-menu a:hover {
-            color: #4169E1;
-        }
-        
-        /* Menú responsivo */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-            .nav-menu.active {
-                display: flex;
-            }
-        }
-        
-        /* Contenido principal */
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 2rem;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            color: #000;
-        }
-        
-        .hero p {
-            font-size: 1.1rem;
-            color: #555;
-        }
-        
-        /* Sección de categorías */
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .category-card {
-            background-color: white;
-            border: 1px solid #f0f0f0;
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .category-card h2 {
-            color: #000;
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
-        
-        .category-card h2 span {
-            color: #4169E1;
-        }
-        
-        .category-card p {
-            color: #555;
-            font-size: 0.95rem;
-        }
-        
-        /* Sección de últimas publicaciones */
-        .latest-posts {
-            margin-bottom: 2rem;
-        }
-        
-        .latest-posts h2 {
-            color: #4169E1;
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .post-card {
-            background-color: white;
-            border: 1px solid #f0f0f0;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .post-card h3 {
-            color: #000;
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
-        
-        .post-card h3 span {
-            color: #FFD700;
-        }
-        
-        .post-card p {
-            color: #555;
-            font-size: 0.95rem;
-        }
-        
-        /* Botón */
-        .btn {
-            display: inline-block;
-            background-color: #FFD700;
-            color: #000;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-        
-        .btn:hover {
-            background-color: #FFC107;
-        }
-        
-        .btn-center {
-            display: block;
-            text-align: center;
-            margin: 2rem auto 0;
-        }
-        
-        /* Pie de página */
-        footer {
-            background-color: #f9f9f9;
-            padding: 1.5rem;
-            text-align: center;
-            margin-top: 2rem;
-            border-top: 1px solid #f0f0f0;
-        }
-        
-        /* Banner de cookies */
-        #cookie-banner {
-            position: fixed;
-            bottom: 0;
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            width: 100%;
-            text-align: center;
-            z-index: 1000;
-            border-top: 1px solid #f0f0f0;
-            display: none;
-        }
-        
-        #cookie-banner.show {
-            display: block;
-        }
-        
-        #cookie-banner button {
-            background-color: #4169E1;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 1rem;
-        }
+        body { font-family: 'Arial', sans-serif; background-color: white; color: #333; margin: 0; padding: 0; line-height: 1.6; }
+        header { background-color: white; padding: 1rem; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #000; }
+        .logo span { color: #FFD700; }
+        .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        .nav-menu { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-menu a { text-decoration: none; color: #000; font-weight: 500; }
+        .nav-menu a:hover { color: #4169E1; }
+        @media (max-width: 768px) { .hamburger { display: block; } .nav-menu { display: none; position: absolute; top: 60px; left: 0; width: 100%; background: white; flex-direction: column; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); } .nav-menu.active { display: flex; } }
+        main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .hero { text-align: center; padding: 2rem; background-color: #f9f9f9; border-radius: 8px; margin-bottom: 2rem; }
+        .hero h1 { font-size: 2.5rem; color: #000; }
+        .hero p { font-size: 1.1rem; color: #555; }
+        .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .category-card { background-color: white; border: 1px solid #f0f0f0; border-radius: 8px; padding: 1.5rem; transition: transform 0.3s; }
+        .category-card:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .category-card h2 { color: #000; margin-top: 0; font-size: 1.3rem; }
+        .category-card h2 span { color: #4169E1; }
+        .category-card p { color: #555; font-size: 0.95rem; }
+        .latest-posts { margin-bottom: 2rem; }
+        .latest-posts h2 { color: #4169E1; font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem; }
+        .post-card { background-color: white; border: 1px solid #f0f0f0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.3s; }
+        .post-card:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .post-card h3 { color: #000; margin-top: 0; font-size: 1.3rem; }
+        .post-card h3 span { color: #FFD700; }
+        .post-card p { color: #555; font-size: 0.95rem; }
+        .btn { display: inline-block; background-color: #FFD700; color: #000; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 1rem; }
+        .btn:hover { background-color: #FFC107; }
+        .btn-center { display: block; text-align: center; margin: 2rem auto 0; }
+        footer { background-color: #f9f9f9; padding: 1.5rem; text-align: center; margin-top: 2rem; border-top: 1px solid #f0f0f0; }
+        #cookie-banner { position: fixed; bottom: 0; background: white; padding: 1rem; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); width: 100%; text-align: center; z-index: 1000; border-top: 1px solid #f0f0f0; display: none; }
+        #cookie-banner.show { display: block; }
+        #cookie-banner button { background-color: #4169E1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-left: 1rem; }
     </style>
 </head>
 <body>
@@ -257,112 +54,88 @@
             <li><a href="/categoria/recursos-gratis">Recursos Gratuitos</a></li>
         </ul>
     </header>
-    
     <main>
         <section class="hero">
             <h1>Ideas para Celebrar de Forma Única</h1>
             <p>Frases, temáticas, organización y recursos para que cada cumpleaños sea inolvidable.</p>
         </section>
-        
         <section class="categories">
             <div class="category-card">
                 <h2><span>Frases</span> y Mensajes</h2>
                 <p>Encontrá las palabras perfectas para cada ocasión: cartas, dedicatorias y mensajes que emocionan.</p>
                 <a href="/categoria/frases-y-mensajes" class="btn">Ver más</a>
             </div>
-            
             <div class="category-card">
                 <h2><span>Ideas</span> y Temáticas</h2>
                 <p>Inspírate con temáticas originales, desde clásicas hasta las más innovadoras del 2026.</p>
                 <a href="/categoria/ideas-y-tematicas" class="btn">Ver más</a>
             </div>
-            
             <div class="category-card">
                 <h2><span>Organización</span></h2>
                 <p>Guías prácticas para planificar tu cumpleaños sin estrés: pasos, checklists y consejos.</p>
                 <a href="/categoria/organizacion" class="btn">Ver más</a>
             </div>
-            
             <div class="category-card">
                 <h2><span>Tendencias</span> 2026</h2>
                 <p>Mantenete al día con las últimas modas en cumpleaños: outfits, decoración, música y más.</p>
                 <a href="/categoria/tendencias-2026" class="btn">Ver más</a>
             </div>
-            
             <div class="category-card">
                 <h2><span>Recursos</span> Gratuitos</h2>
                 <p>Descargá plantillas, checklists y herramientas para facilitar la organización de tu evento.</p>
                 <a href="/categoria/recursos-gratis" class="btn">Ver más</a>
             </div>
         </section>
-        
-        <!-- Últimas 5 publicaciones -->
         <section class="latest-posts">
             <h2>📌 Últimas Publicaciones</h2>
-            
             <div class="post-card">
-                <h3><span>Frases de Cumpleaños para Hermanos: 40 Mensajes que Fortalecen el Vínculo Familiar</span></h3>
-                <p>40 mensajes únicos para hermanos: divertidos, emotivos, para tarjetas o cartas. Ideal para celebrar el vínculo familiar.</p>
-                <a href="/posts/frases-de-cumpleanos-para-hermanos" class="btn">Leer más</a>
+                <h3><span>Frases de Cumpleaños para mi Esposo: 40 Mensajes Llenos de Pasión y Cariño</span></h3>
+                <p>40 mensajes únicos para tu esposo: admiración, pasión y cariño para celebrar su día.</p>
+                <a href="/posts/frases-de-cumpleanos-para-mi-esposo" class="btn">Leer más</a>
             </div>
-            
             <div class="post-card">
-                <h3><span>Frases de Cumpleaños para Amigos: 60 Mensajes que Celebran la Amistad Verdadera</span></h3>
-                <p>60 mensajes únicos para amigos: divertidos, emotivos, para redes sociales o tarjetas. Ideal para celebrar la amistad verdadera.</p>
-                <a href="/posts/frases-de-cumpleanos-para-amigos" class="btn">Leer más</a>
+                <h3><span>Frases de Cumpleaños para mi Esposa: 40 Mensajes que Celebran tu Amor</span></h3>
+                <p>40 mensajes únicos para tu esposa: gratitud, ternura y amor para su día especial.</p>
+                <a href="/posts/frases-de-cumpleanos-para-mi-esposa" class="btn">Leer más</a>
             </div>
-            
+            <div class="post-card">
+                <h3><span>Frases de Cumpleaños para mi Amor: 50 Mensajes Románticos que Encienden el Corazón</span></h3>
+                <p>50 mensajes románticos para tu amor: pasión, ternura y emoción para un día inolvidable.</p>
+                <a href="/posts/frases-de-cumpleanos-para-mi-amor" class="btn">Leer más</a>
+            </div>
             <div class="post-card">
                 <h3><span>Zenitsu Cumpleaños: Diseños de Invitaciones y Decoración Anime</span></h3>
                 <p>Guía completa para organizar una fiesta temática de Demon Slayer. Incluye diseños de invitaciones, decoración anime y actividades.</p>
                 <a href="/posts/zenitsu-cumpleanos" class="btn">Leer más</a>
             </div>
-            
             <div class="post-card">
                 <h3><span>Feliz Cumpleaños Querida Hija: 50 Frases Emotivas</span></h3>
                 <p>Frases tiernas, motivadoras y emotivas para celebrar el día de tu hija. Mensajes que transmiten todo el amor de una madre.</p>
                 <a href="/posts/feliz-cumpleanos-querida-hija" class="btn">Leer más</a>
             </div>
-            
-            <div class="post-card">
-                <h3><span>Dónde Celebrar un Cumpleaños de una Niña de 11 Años</span></h3>
-                <p>15 lugares únicos y creativos para celebrar un cumpleaños inolvidable. Ideas originales y consejos prácticos.</p>
-                <a href="/posts/donde-celebrar-un-cumpleanos-de-una-nina-de-11-anos" class="btn">Leer más</a>
-            </div>
-             
             <a href="/todas-las-publicaciones" class="btn btn-center">Ver Todas las Publicaciones</a>
         </section>
     </main>
-    
     <footer>
         <p>© 2026 Para Cumpleaños. Todos los derechos reservados.</p>
         <p><a href="/politica-de-privacidad" style="color: #000; text-decoration: none;">Política de Privacidad</a> | <a href="/cookies" style="color: #000; text-decoration: none;">Cookies</a></p>
     </footer>
-    
     <div id="cookie-banner">
         <p>Usamos cookies para mejorar tu experiencia. <a href="/cookies" style="color: #4169E1;">Más información</a>.</p>
         <button id="accept-cookies">Aceptar</button>
     </div>
-    
     <script>
-        // Menú hamburguesa
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-menu').classList.toggle('active');
         });
-        
-        // Banner de cookies (solo aparece 1 vez)
         if (!localStorage.getItem('cookiesAccepted')) {
             document.getElementById('cookie-banner').classList.add('show');
         }
-        
         document.getElementById('accept-cookies').addEventListener('click', () => {
             localStorage.setItem('cookiesAccepted', 'true');
             document.getElementById('cookie-banner').classList.remove('show');
         });
     </script>
-
-    <!-- Default Statcounter code for ParaCumpleanos
-    https://paracumpleanos.com/ -->
     <script type="text/javascript">
     var sc_project=13334162; 
     var sc_invisible=1; 
@@ -370,6 +143,5 @@
     </script>
     <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
     <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13334162/0/3e891d7b/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-    <!-- End of Statcounter Code -->
 </body>
 </html>
