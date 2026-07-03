@@ -143,6 +143,47 @@
             font-size: 0.95rem;
         }
         
+        /* Sección de últimas publicaciones */
+        .latest-posts {
+            margin-bottom: 2rem;
+        }
+        
+        .latest-posts h2 {
+            color: #4169E1;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-card {
+            background-color: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .post-card h3 {
+            color: #000;
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        
+        .post-card h3 span {
+            color: #FFD700;
+        }
+        
+        .post-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
         /* Botón */
         .btn {
             display: inline-block;
@@ -157,6 +198,12 @@
         
         .btn:hover {
             background-color: #FFC107;
+        }
+        
+        .btn-center {
+            display: block;
+            text-align: center;
+            margin: 2rem auto 0;
         }
         
         /* Pie de página */
@@ -179,6 +226,11 @@
             text-align: center;
             z-index: 1000;
             border-top: 1px solid #f0f0f0;
+            display: none; /* Oculto por defecto, se muestra con JS */
+        }
+        
+        #cookie-banner.show {
+            display: block;
         }
         
         #cookie-banner button {
@@ -243,6 +295,43 @@
                 <a href="/categoria/recursos-gratis" class="btn">Ver más</a>
             </div>
         </section>
+        
+        <!-- Últimas 5 publicaciones -->
+        <section class="latest-posts">
+            <h2>📌 Últimas Publicaciones</h2>
+            
+            <div class="post-card">
+                <h3><span>Zenitsu Cumpleaños: Diseños de Invitaciones y Decoración Anime</span></h3>
+                <p>Guía completa para organizar una fiesta temática de Demon Slayer. Incluye diseños de invitaciones, decoración anime y actividades.</p>
+                <a href="/posts/zenitsu-cumpleanos" class="btn">Leer más</a>
+            </div>
+            
+            <div class="post-card">
+                <h3><span>Feliz Cumpleaños Querida Hija: 50 Frases Emotivas</span></h3>
+                <p>Frases tiernas, motivadoras y emotivas para celebrar el día de tu hija. Mensajes que transmiten todo el amor de una madre.</p>
+                <a href="/posts/feliz-cumpleanos-querida-hija" class="btn">Leer más</a>
+            </div>
+            
+            <div class="post-card">
+                <h3><span>Dónde Celebrar un Cumpleaños de una Niña de 11 Años</span></h3>
+                <p>15 lugares únicos y creativos para celebrar un cumpleaños inolvidable. Ideas originales y consejos prácticos.</p>
+                <a href="/posts/donde-celebrar-un-cumpleanos-de-una-nina-de-11-anos" class="btn">Leer más</a>
+            </div>
+            
+            <div class="post-card">
+                <h3><span>30 Plantillas de Invitaciones para Cumpleaños</span></h3>
+                <p>Plantillas editables en PNG y SVG para personalizar tus invitaciones. Incluye tutorial para editar con Canva o Photoshop.</p>
+                <a href="/posts/30-plantillas-de-invitaciones-para-cumpleanos" class="btn">Leer más</a>
+            </div>
+            
+            <div class="post-card">
+                <h3><span>50 Banderines para Cumpleaños para Imprimir GRATIS</span></h3>
+                <p>Pack exclusivo con 50 diseños únicos de banderines para decorar tu cumpleaños. Incluye tutorial paso a paso.</p>
+                <a href="/posts/50-banderines-para-cumpleanos-imprimir-gratis" class="btn">Leer más</a>
+            </div>
+            
+            <a href="/todas-las-publicaciones" class="btn btn-center">Ver Todas las Publicaciones</a>
+        </section>
     </main>
     
     <footer>
@@ -252,23 +341,35 @@
     
     <div id="cookie-banner">
         <p>Usamos cookies para mejorar tu experiencia. <a href="/cookies" style="color: #4169E1;">Más información</a>.</p>
-        <button onclick="document.getElementById('cookie-banner').style.display='none'">Aceptar</button>
+        <button id="accept-cookies">Aceptar</button>
     </div>
     
     <script>
+        // Menú hamburguesa
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-menu').classList.toggle('active');
         });
+        
+        // Banner de cookies (solo aparece 1 vez)
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').classList.add('show');
+        }
+        
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.remove('show');
+        });
     </script>
-    
-    <!-- Default Statcounter code for ParaCumpleanos -->
+
+    <!-- Default Statcounter code for ParaCumpleanos
+    https://paracumpleanos.com/ -->
     <script type="text/javascript">
     var sc_project=13334162; 
     var sc_invisible=1; 
     var sc_security="3e891d7b"; 
     </script>
     <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13334162/0/3e891d7b/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13334162/0/3e891d7b/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     <!-- End of Statcounter Code -->
 </body>
 </html>
