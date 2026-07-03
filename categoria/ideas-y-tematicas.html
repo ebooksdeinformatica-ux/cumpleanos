@@ -151,6 +151,10 @@
             text-align: center;
             z-index: 1000;
             border-top: 1px solid #f0f0f0;
+            display: none;
+        }
+        #cookie-banner.show {
+            display: block;
         }
         #cookie-banner button {
             background-color: #4169E1;
@@ -184,17 +188,18 @@
         </section>
         
         <section>
+            <!-- De más nueva a más vieja -->
+            <div class="post-card">
+                <h2><span>20 Ideas de Temáticas para Cumpleaños que Nadie Más Tiene</span></h2>
+                <p>Temáticas únicas y originales para 2026, con materiales necesarios y consejos de experto. Desde fiestas de los años 20 hasta escape rooms.</p>
+                <a href="/posts/20-ideas-de-tematicas-para-cumpleanos-que-nadie-mas-tiene" class="btn">Leer más</a>
+            </div>
+            
             <div class="post-card">
                 <h2><span>10 Ideas para Cumpleaños Inolvidables</span></h2>
                 <p>Desde escape rooms hasta talleres de arte, estas ideas harán que tu celebración sea única. Incluye consejos prácticos para implementarlas sin estrés.</p>
                 <p><strong>Relacionado:</strong> Si buscás más inspiración, visitá nuestra sección de <a href="/categoria/organizacion" class="interlink">Organización</a> para implementar estas ideas sin estrés.</p>
                 <a href="/posts/10-ideas-para-cumpleanos-inolvidables" class="btn">Leer más</a>
-            </div>
-            
-            <div class="post-card">
-                <h2><span>20 Ideas de Temáticas para Cumpleaños que Nadie Más Tiene</span></h2>
-                <p>Temáticas únicas y originales para 2026, con materiales necesarios y consejos de experto. Desde fiestas de los años 20 hasta escape rooms.</p>
-                <a href="/posts/20-ideas-de-tematicas-para-cumpleanos-que-nadie-mas-tiene" class="btn">Leer más</a>
             </div>
         </section>
     </main>
@@ -206,12 +211,22 @@
     
     <div id="cookie-banner">
         <p>Usamos cookies para mejorar tu experiencia. <a href="/cookies" style="color: #4169E1;">Más información</a>.</p>
-        <button onclick="document.getElementById('cookie-banner').style.display='none'">Aceptar</button>
+        <button id="accept-cookies">Aceptar</button>
     </div>
     
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Banner de cookies (solo aparece 1 vez)
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').classList.add('show');
+        }
+        
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.remove('show');
         });
     </script>
 
