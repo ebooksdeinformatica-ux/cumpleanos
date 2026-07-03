@@ -151,6 +151,10 @@
             text-align: center;
             z-index: 1000;
             border-top: 1px solid #f0f0f0;
+            display: none;
+        }
+        #cookie-banner.show {
+            display: block;
         }
         #cookie-banner button {
             background-color: #4169E1;
@@ -184,16 +188,17 @@
         </section>
         
         <section>
-            <div class="post-card">
-                <h2><span>100 Frases de Cumpleaños que Emocionan</span></h2>
-                <p>Una colección de frases únicas para cada ocasión: desde cumpleaños de niños hasta mensajes para adultos. Ideal para tarjetas, redes sociales o mensajes personales.</p>
-                <a href="/posts/100-frases-de-cumpleanos-que-emocionan" class="btn">Leer más</a>
-            </div>
-            
+            <!-- De más nueva a más vieja -->
             <div class="post-card">
                 <h2><span>Feliz Cumpleaños Querida Hija: 50 Frases Emotivas</span></h2>
                 <p>Frases tiernas, motivadoras y emotivas para celebrar el día de tu hija. Mensajes que transmiten todo el amor de una madre.</p>
                 <a href="/posts/feliz-cumpleanos-querida-hija" class="btn">Leer más</a>
+            </div>
+            
+            <div class="post-card">
+                <h2><span>100 Frases de Cumpleaños que Emocionan</span></h2>
+                <p>Una colección de frases únicas para cada ocasión: desde cumpleaños de niños hasta mensajes para adultos. Ideal para tarjetas, redes sociales o mensajes personales.</p>
+                <a href="/posts/100-frases-de-cumpleanos-que-emocionan" class="btn">Leer más</a>
             </div>
             
             <div class="post-card">
@@ -211,12 +216,22 @@
     
     <div id="cookie-banner">
         <p>Usamos cookies para mejorar tu experiencia. <a href="/cookies" style="color: #4169E1;">Más información</a>.</p>
-        <button onclick="document.getElementById('cookie-banner').style.display='none'">Aceptar</button>
+        <button id="accept-cookies">Aceptar</button>
     </div>
     
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Banner de cookies (solo aparece 1 vez)
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').classList.add('show');
+        }
+        
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.remove('show');
         });
     </script>
 
