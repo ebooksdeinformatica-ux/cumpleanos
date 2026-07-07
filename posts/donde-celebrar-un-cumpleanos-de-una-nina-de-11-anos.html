@@ -95,6 +95,10 @@
             color: #FFD700;
             margin-top: 1rem;
         }
+        article h4 {
+            color: #4169E1;
+            margin-top: 1rem;
+        }
         article p {
             color: #555;
             margin-bottom: 1rem;
@@ -174,6 +178,10 @@
             text-align: center;
             z-index: 1000;
             border-top: 1px solid #f0f0f0;
+            display: none;
+        }
+        #cookie-banner.show {
+            display: block;
         }
         #cookie-banner button {
             background-color: #4169E1;
@@ -414,41 +422,35 @@
                     <th>Lugar</th>
                     <th>Tipo de Actividad</th>
                     <th>Nivel de Energía</th>
-                    <th>Costo Aproximado</th>
                     <th>Ideal para</th>
                 </tr>
                 <tr>
                     <td>Taller de Arte</td>
                     <td>Creativa</td>
                     <td>Bajo</td>
-                    <td>Moderado</td>
                     <td>Niñas artísticas</td>
                 </tr>
                 <tr>
                     <td>Escape Room</td>
                     <td>Mental</td>
                     <td>Alto</td>
-                    <td>Moderado</td>
                     <td>Niñas inteligentes</td>
                 </tr>
                 <tr>
                     <td>Parque de Aventuras</td>
                     <td>Física</td>
                     <td>Muy Alto</td>
-                    <td>Moderado</td>
                     <td>Niñas activas</td>
                 </tr>
                 <tr>
                     <td>Realidad Virtual</td>
                     <td>Tecnológica</td>
                     <td>Alto</td>
-                    <td>Moderado</td>
                     <td>Niñas tecnológicas</td>
                 </tr>
                 <tr>
                     <td>Taller de Cocina</td>
                     <td>Creativa</td>
-                    <td>Moderado</td>
                     <td>Moderado</td>
                     <td>Niñas gourmet</td>
                 </tr>
@@ -486,12 +488,22 @@
     
     <div id="cookie-banner">
         <p>Usamos cookies para mejorar tu experiencia. <a href="/cookies" style="color: #4169E1;">Más información</a>.</p>
-        <button onclick="document.getElementById('cookie-banner').style.display='none'">Aceptar</button>
+        <button id="accept-cookies">Aceptar</button>
     </div>
     
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Banner de cookies (solo aparece 1 vez)
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').classList.add('show');
+        }
+        
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.remove('show');
         });
     </script>
 
