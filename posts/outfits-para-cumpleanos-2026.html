@@ -95,6 +95,10 @@
             color: #FFD700;
             margin-top: 1rem;
         }
+        article h4 {
+            color: #4169E1;
+            margin-top: 1rem;
+        }
         article p {
             color: #555;
             margin-bottom: 1rem;
@@ -190,6 +194,10 @@
             text-align: center;
             z-index: 1000;
             border-top: 1px solid #f0f0f0;
+            display: none;
+        }
+        #cookie-banner.show {
+            display: block;
         }
         #cookie-banner button {
             background-color: #4169E1;
@@ -464,12 +472,22 @@
     
     <div id="cookie-banner">
         <p>Usamos cookies para mejorar tu experiencia. <a href="/cookies" style="color: #4169E1;">Más información</a>.</p>
-        <button onclick="document.getElementById('cookie-banner').style.display='none'">Aceptar</button>
+        <button id="accept-cookies">Aceptar</button>
     </div>
     
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Banner de cookies (solo aparece 1 vez)
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').classList.add('show');
+        }
+        
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.remove('show');
         });
     </script>
 
