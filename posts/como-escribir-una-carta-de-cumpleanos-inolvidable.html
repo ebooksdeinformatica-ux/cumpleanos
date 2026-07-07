@@ -184,6 +184,10 @@
             text-align: center;
             z-index: 1000;
             border-top: 1px solid #f0f0f0;
+            display: none;
+        }
+        #cookie-banner.show {
+            display: block;
         }
         #cookie-banner button {
             background-color: #4169E1;
@@ -240,7 +244,7 @@
             <ul class="pasos-list">
                 <li><strong>Agradecer:</strong> "Gracias por ser parte de mi vida".</li>
                 <li><strong>Inspirar:</strong> "Que este año sea el mejor de tu vida".</li>
-                <li><strong>Recordar momentos:</strong> "Nunca olvidaré cuando...".</li>
+                <li><strong>Recordar momentos:</strong> "Nunca olvidaré cuando..."</li>
                 <li><strong>Desear lo mejor:</strong> "Que todos tus sueños se hagan realidad".</li>
             </ul>
             
@@ -298,7 +302,7 @@
             
             <div class="ejemplo">
                 <p><strong>Ejemplo de estructura completa:</strong></p>
-                <p>"Querida Ana,</p>
+                <p>"Querida Ana,"</p>
                 <p>Hoy no solo es tu cumpleaños, sino el día en que quiero recordarte lo especial que sos para mí. Desde que te conozco, cada momento a tu lado ha sido único. Admiro tu fuerza, tu bondad y esa capacidad que tenés de hacer sonreír a todos.</p>
                 <p>En este nuevo año, te deseo que todos tus sueños se hagan realidad. Que la vida te colme de alegrías y que nunca te falte el amor de quienes te rodeamos.</p>
                 <p>Con todo mi cariño,</p>
@@ -358,7 +362,7 @@
             
             <h3>👶 Para un Hijo</h3>
             <div class="ejemplo">
-                <p>"Mi querido Lucas,</p>
+                <p>"Mi querido Lucas,"</p>
                 <p>Hoy celebramos el día en que llegaste a cambiar mi vida para siempre. No hay palabras para describir la felicidad que me das cada día. Verte crecer, aprender y reír es el mejor regalo que la vida me ha dado.</p>
                 <p>Que este nuevo año te traiga aventuras increíbles, amigos verdaderos y mucha, mucha felicidad. Nunca olvides lo especial que sos.</p>
                 <p>Te amo más de lo que las palabras pueden expresar,</p>
@@ -367,7 +371,7 @@
             
             <h3>💑 Para Pareja</h3>
             <div class="ejemplo">
-                <p>"Mi amor,</p>
+                <p>"Mi amor,"</p>
                 <p>Cada día a tu lado es un regalo. Hoy no solo celebramos tu cumpleaños, sino también el día en que decidí compartir mi vida contigo. Sos mi complemento, mi paz, mi alegría.</p>
                 <p>Que este año nos traiga más complicidad, más risas y más momentos inolvidables. Juntos, todo es posible.</p>
                 <p>Para siempre tuyo/a,</p>
@@ -376,7 +380,7 @@
             
             <h3>👫 Para un Amigo</h3>
             <div class="ejemplo">
-                <p>"¡Hola, loco!</p>
+                <p>"¡Hola, loco!"</p>
                 <p>¿Sabés qué es lo mejor de tener un amigo como vos? Que nunca me aburro. Desde aquél día en la escuela que nos metimos en problemas por reírnos del profe, supe que esta amistad era para siempre.</p>
                 <p>Que este año te traiga todo lo que deseás: éxito, amor y, sobre todo, mucha diversión. ¡Y que sigamos haciendo travesuras juntos!</p>
                 <p>Tu cómplice,</p>
@@ -385,7 +389,7 @@
             
             <h3>👨‍👩‍👧 Para un Familiar (Mamá/Papá)</h3>
             <div class="ejemplo">
-                <p>"Querida mamá,</p>
+                <p>"Querida mamá,"</p>
                 <p>Hoy no es solo tu cumpleaños, es el día en que celebro tener a la mejor madre del mundo. Todo lo que soy se lo debo a vos: tu amor, tu paciencia y tus enseñanzas.</p>
                 <p>Que este año te traiga salud, felicidad y la certeza de que sos la persona más importante en mi vida.</p>
                 <p>Con todo mi amor,</p>
@@ -424,12 +428,22 @@
     
     <div id="cookie-banner">
         <p>Usamos cookies para mejorar tu experiencia. <a href="/cookies" style="color: #4169E1;">Más información</a>.</p>
-        <button onclick="document.getElementById('cookie-banner').style.display='none'">Aceptar</button>
+        <button id="accept-cookies">Aceptar</button>
     </div>
     
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Banner de cookies (solo aparece 1 vez)
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').classList.add('show');
+        }
+        
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.remove('show');
         });
     </script>
 
